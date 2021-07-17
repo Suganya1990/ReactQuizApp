@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Container, Row, Col, Button } from 'react-bootstrap'
+
 import Question from './components/Question'
 import GameMode from './components/GameMode'
 
