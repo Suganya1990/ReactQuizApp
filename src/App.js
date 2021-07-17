@@ -1,4 +1,3 @@
-import { NextWeekOutlined, TramOutlined } from '@material-ui/icons'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap'
@@ -51,7 +50,7 @@ const App = () => {
       else
         return (
           <div className='d-flex flex-column justify-content-center align-items-center'>
-            <h3 className='score--text text-center'>Your Score is {score}</h3>
+            <h3 className='score--text text-center '>Your Score is {score}</h3>
             <button
               className='btn--reset'
               onClick={() => {
