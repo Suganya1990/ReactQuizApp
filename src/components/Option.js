@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { Col, Button } from 'react-bootstrap'
-import './option.css'
+import '/option.css'
 const Option = ({ showAnswer, btnStyle, answer, option, handleAnswer }) => {
   // const bgColor = showAnswer
   //   ? answer === option

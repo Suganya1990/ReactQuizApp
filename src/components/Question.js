@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap'
-import Option from './Option'
+import Option from '/Option'
 import '../components/Question.css'
 
 const Question = ({

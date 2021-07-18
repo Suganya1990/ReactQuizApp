@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-
-import Question from './components/Question'
-import GameMode from './components/GameMode'
+import { Container, Row, Col, Button } from 'react-bootstrap'
+import Question from '/components/Question'
+import GameMode from '/components/GameMode'
 
 import './App.css'
 
@@ -12,12 +12,15 @@ const App = () => {
   const [score, setScore] = useState(0)
   const [Api_Url, setApi_Url] = useState('')
   const [showAnswer, setShowAnswer] = useState(false)
+  const [gameOver, setGameOver] = useState(false)
   const handleAnswer = (option) => {
     if (!showAnswer) {
       if (option === questions[qIndex].correct_answer) {
         setScore(score + 1)
       }
     }
+    if (qIndex == questions.length - 1) setGameOver(true)
+
     setShowAnswer(true)
   }
 
@@ -30,6 +33,7 @@ const App = () => {
     setQuestions([])
     setQIndex(0)
     setShowAnswer(false)
+    setGameOver(false)
   }
 
   const renderContent = () => {
@@ -47,20 +51,6 @@ const App = () => {
             nextQuestion={nextQuestion}
           />
         )
-      else
-        return (
-          <div className='d-flex flex-column justify-content-center align-items-center'>
-            <h3 className='score--text text-center '>Your Score is {score}</h3>
-            <button
-              className='btn--reset'
-              onClick={() => {
-                resetGame()
-              }}
-            >
-              Play Again
-            </button>
-          </div>
-        )
     } else
       return (
         <div className='h-auto d-inline-block align-items-center my-auto'>
@@ -72,6 +62,22 @@ const App = () => {
           </p>
         </div>
       )
+
+    if (gameOver) {
+      return (
+        <div className='d-flex flex-column justify-content-center align-items-center'>
+          <h3 className='score--text text-center '>Your Score is {score}</h3>
+          <button
+            className='btn--reset'
+            onClick={() => {
+              resetGame()
+            }}
+          >
+            Play Again
+          </button>
+        </div>
+      )
+    }
   }
 
   const handleGameMode = (api) => {

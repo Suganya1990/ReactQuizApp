@@ -2,7 +2,7 @@ import React from 'react'
 
 import Data from '../gameModeList'
 
-import './GameMode.css'
+import '/GameMode.css'
 
 const Mode = ({ handleGameMode, data: { category, image, apiLink } }) => {
   return (
